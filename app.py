@@ -16,7 +16,7 @@ st.markdown("This app analyzes the vehicle collision data")
 def load_data(nrows):
    # Load the data, parse the date/time column, drop rows with missing latitude/longitude,
    # convert column names to lowercase, and rename the date/time column
-   data = pd.read_csv("Motor_Vehicle_Collisions_-_Crashes.csv", nrows=nrows, parse_dates=['CRASH_DATE', 'CRASH_TIME'])
+   data = pd.read_csv("Motor_Vehicle_Collisions.zip", nrows=nrows, parse_dates=['CRASH_DATE', 'CRASH_TIME'])
    data.dropna(subset=['LATITUDE', 'LONGITUDE'], inplace=True)
    def lowercase(x): return str(x).lower()
    data.rename(lowercase, axis='columns', inplace=True)
